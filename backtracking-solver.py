@@ -19,5 +19,10 @@ def printBoard(board):
             print(column, end=" ")
         print()
 
-printBoard(board)
+#This finds an "empty" box on the board, which is shown by an integer 0.
+def findEmpty(board):
+    for row in range(len(board)):
+        for column in range(len(board[0])):
+            if board[row][column] == 0:
+                return (row, column)
 
