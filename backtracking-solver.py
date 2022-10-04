@@ -12,6 +12,33 @@ board = [
             [0,0,7,0,0,6,0,0,1],
             [0,4,0,0,8,0,0,0,9]
         ]
+
+#Check for a valid number based on the constrictions.
+#Takes in the board, a number to try, and the position within the board.
+#   Note: position is represented as positon[row, column]
+def isValid(board, number, position):
+
+    #Check if the number is in the row
+
+    for i in range(len(board[0])):
+        #Checks each column within a row (pos will be a tuple (row, column)) and sees if it is equal to
+        #the number that was just added. However, the position[1] != i makes sure that we skip the position
+        #we just added the number to since theres no need to check that.
+        if board[position[0]][i] == num and position[1] != i:
+            return False
+    
+
+    #Check if the number is in the column
+    
+    for i in range(len(board)):
+        if board[i][position[1]] == num and position[0] != i:
+            return False
+
+    #Check if the number is in the 3x3 Block
+
+
+
+
 #Walks through each row to print the board. Can be improved to look more user friendly later but not necessary.
 def printBoard(board):
     for row in board:
