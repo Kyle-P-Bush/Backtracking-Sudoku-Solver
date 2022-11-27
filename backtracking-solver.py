@@ -1,6 +1,7 @@
 #Solver taking the backtracking approach
 
-
+import time
+#TODO: Add 3 levels of board difficulty
 board = [
             [4,0,0,0,3,0,0,6,0],
             [2,0,0,1,0,0,4,0,0],
@@ -75,6 +76,10 @@ def findEmpty(board):
     return None
 
 printBoard(board)
+start = time.time()
 solve(board)
+end = time.time()
+result = end - start
 print("---------")
 printBoard(board) 
+print("The puzzle was solved in %f seconds" % result)
