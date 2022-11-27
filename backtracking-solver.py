@@ -2,17 +2,44 @@
 
 import time
 #TODO: Add 3 levels of board difficulty
-board = [
-            [4,0,0,0,3,0,0,6,0],
-            [2,0,0,1,0,0,4,0,0],
-            [7,5,0,9,0,4,1,0,0],
-            [0,9,0,6,2,8,5,0,4],
-            [0,0,2,0,0,0,3,0,0],
-            [5,0,4,7,1,3,0,8,0],
-            [0,0,8,5,0,1,0,4,7],
-            [0,0,7,0,0,6,0,0,1],
-            [0,4,0,0,8,0,0,0,9]
+
+
+easyBoard = [
+            [9,0,6,3,4,0,8,1,0],
+            [0,5,1,7,0,0,3,0,0],
+            [4,7,0,0,9,1,0,0,5],
+            [0,0,0,9,0,3,0,0,2],
+            [0,0,2,0,8,7,0,0,0],
+            [1,0,7,2,0,0,6,0,0],
+            [0,8,5,0,0,9,1,0,0],
+            [0,3,4,0,6,0,0,0,9],
+            [0,1,0,5,0,8,7,0,6]
         ]
+mediumBoard =   [
+                [6,1,0,0,2,0,0,0,0],
+                [0,0,0,0,3,5,0,0,0],
+                [0,5,0,0,0,0,8,1,3],
+                [0,0,8,0,0,9,0,0,1],
+                [0,2,9,5,0,1,7,0,0],
+                [5,6,0,4,7,3,0,8,0],
+                [0,0,2,0,9,0,0,7,0],
+                [7,0,0,0,0,0,0,0,9],
+                [0,0,6,0,0,0,2,0,0]
+                
+        ]
+
+hardBoard = [
+            [0,6,0,0,1,0,0,2,0],
+            [0,4,0,0,0,7,9,0,5],
+            [0,9,0,2,0,0,0,8,3],
+            [0,0,0,0,4,0,0,0,0],
+            [0,0,0,8,0,0,0,0,0],
+            [8,0,1,0,2,0,0,0,0],
+            [0,0,0,0,0,8,7,0,0],
+            [7,0,0,1,0,0,0,9,8],
+            [0,0,0,0,0,9,0,3,2],
+        ]
+
 def solve(board):
     find = findEmpty(board)
     if not find:
@@ -75,11 +102,37 @@ def findEmpty(board):
                 return (row, column)
     return None
 
-printBoard(board)
+#Easy Board Results
+print("Easy Board Results:")
+printBoard(easyBoard)
 start = time.time()
-solve(board)
+solve(easyBoard)
 end = time.time()
 result = end - start
 print("---------")
-printBoard(board) 
-print("The puzzle was solved in %f seconds" % result)
+printBoard(easyBoard) 
+print("\nThe easy puzzle was solved in %f seconds\n" % result)
+
+#  Medium Board Results
+print("Medium Board Results:")
+printBoard(mediumBoard)
+start = time.time()
+solve(mediumBoard)
+end = time.time()
+result = end - start
+print("---------")
+printBoard(mediumBoard) 
+print("\nThe medium puzzle was solved in %f seconds\n" % result)
+
+#Hard Board Results
+print("Hard Board Results:")
+printBoard(hardBoard)
+start = time.time()
+solve(hardBoard)
+end = time.time()
+result = end - start
+print("---------")
+printBoard(hardBoard) 
+print("\nThe hard puzzle was solved in %f seconds\n" % result)
+
+
