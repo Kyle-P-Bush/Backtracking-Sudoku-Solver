@@ -39,6 +39,17 @@ hardBoard = [
             [7,0,0,1,0,0,0,9,8],
             [0,0,0,0,0,9,0,3,2],
         ]
+expertBoard =   [
+                [0,2,0,0,0,0,0,0,3],
+                [6,0,0,0,3,1,0,0,0],
+                [5,0,0,0,0,0,0,8,4],
+                [3,7,0,0,0,0,5,0,1],
+                [0,0,0,0,6,0,0,0,9],
+                [0,0,0,4,0,0,0,0,0],
+                [0,0,0,0,0,7,8,0,0],
+                [2,0,0,0,9,0,0,4,0],
+                [0,5,0,2,0,0,1,0,0]
+        ]
 
 def solve(board):
     find = findEmpty(board)
@@ -134,5 +145,18 @@ result = end - start
 print("---------")
 printBoard(hardBoard) 
 print("\nThe hard puzzle was solved in %f seconds\n" % result)
+
+#Expert Board Results
+print("Expert Board Results:")
+printBoard(expertBoard)
+start = time.time()
+solve(expertBoard)
+end = time.time()
+result = end - start
+print("---------")
+printBoard(expertBoard) 
+print("\nThe expert puzzle was solved in %f seconds\n" % result)
+
+
 
 
