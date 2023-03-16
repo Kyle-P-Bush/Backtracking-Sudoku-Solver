@@ -1,2 +1,2 @@
-# 4101-Project
-This repository will contain the code for the 4101 semester long project.
+# Backtracking Sudoku Solver
+Python implementation of a sudoku solver using a backtracking approach. 
